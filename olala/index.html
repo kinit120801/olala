@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter to my love babyy abeee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #8b7355 0%, #a0956b 50%, #b5a67c 100%);
+            font-family: 'Kalam', cursive;
+            color: #2c1810;
+            overflow-x: hidden;
+        }
+        
+        .wooden-desk {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 115, 85, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(160, 149, 107, 0.6) 0%, transparent 50%),
+                linear-gradient(45deg, #8b7355, #a0956b);
+            z-index: -1;
+        }
+
+        .envelope {
+            max-width: 380px;
+            margin: 50px auto;
+            background: linear-gradient(145deg, #d4b896, #c4a484);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 
+                0 8px 32px rgba(44, 24, 16, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-align: center;
+            transform: rotate(-2deg);
+            position: relative;
+        }
+        
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 30px;
+            background: #8b4513;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .envelope::after {
+            content: '💞';
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #d4af37;
+        }
+
+        .envelope:hover {
+            transform: rotate(-1deg) scale(1.05);
+            box-shadow: 
+                0 12px 40px rgba(44, 24, 16, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .envelope h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #3e2f2f;
+            font-weight: 600;
+        }
+        
+        .envelope p {
+            font-size: 16px;
+            color: #5a4a3a;
+            font-style: italic;
+        }
+
+        .letter-container {
+            display: none;
+            max-width: 650px;
+            margin: 30px auto;
+            background: 
+                linear-gradient(45deg, transparent 49%, rgba(200, 180, 140, 0.1) 49%, rgba(200, 180, 140, 0.1) 51%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(200, 180, 140, 0.1) 49%, rgba(200, 180, 140, 0.1) 51%, transparent 51%),
+                #fef9f3;
+            background-size: 20px 20px, 20px 20px, 100% 100%;
+            padding: 80px 60px;
+            border: 1px solid #e8dcc6;
+            border-radius: 3px;
+            box-shadow: 
+                0 0 40px rgba(44, 24, 16, 0.2),
+                inset 0 0 120px rgba(245, 235, 220, 0.4);
+            position: relative;
+            animation: unfold 1.2s ease forwards;
+            transform: rotate(1deg);
+        }
+
+        
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 80px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, #ff6b6b 20%, #ff6b6b 80%, transparent 100%);
+            opacity: 0.6;
+        }
+        
+        .letter-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    transparent,
+                    transparent 31px,
+                    rgba(200, 180, 140, 0.3) 31px,
+                    rgba(200, 180, 140, 0.3) 33px
+                );
+            pointer-events: none;
+        }
+
+        @keyframes unfold {
+            0% { 
+                opacity: 0; 
+                transform: rotate(1deg) scale(0.8) translateY(-50px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: rotate(1deg) scale(1) translateY(0); 
+            }
+        }
+
+        .letter-header {
+            text-align: right;
+            margin-bottom: 0px;
+            font-size: 16px;
+            color: #6b5b4f;
+            font-style: italic;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #2c1810;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .letter {
+            font-size: 18px;
+            line-height: 2.2;
+            text-align: left;
+            /* white-space: pre-wrap; */
+            font-family: 'Kalam', cursive;
+            color: #2c1810;
+            position: relative;
+            z-index: 2;
+            text-indent: 10px;
+            transform: rotate(-0.3deg);
+        }
+        
+        .letter span {
+            margin-left: 5px;
+            display: inline-block;
+            position: relative;
+            animation: handwrite 0.1s ease-in-out;
+        }
+        
+        .letter span:nth-child(2n) { transform: rotate(0.2deg) translateY(-0.5px); }
+        .letter span:nth-child(3n) { transform: rotate(-0.1deg) translateY(0.3px); }
+        .letter span:nth-child(4n) { transform: rotate(0.1deg) translateY(-0.2px); }
+        .letter span:nth-child(5n) { transform: rotate(-0.2deg) translateY(0.4px); }
+        .letter span:nth-child(7n) { transform: rotate(0.3deg) translateY(-0.3px); }
+        
+        .word {
+            display: inline-block;
+            transform-origin: bottom left;
+        }
+        
+        .word:nth-child(odd) { transform: rotate(0.1deg); }
+        .word:nth-child(even) { transform: rotate(-0.1deg); }
+        .word:nth-child(3n) { transform: rotate(0.2deg) translateY(-0.2px); }
+        .word:nth-child(5n) { transform: rotate(-0.15deg) translateY(0.1px); }
+        
+        @keyframes handwrite {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .letter p {
+            margin-left: 4%;
+            position: relative;
+        }
+
+        .letter span:first-child {
+            margin-left: 40px;
+        }
+        
+        .letter p:first-child{
+            font-size: 30px;
+            font-family: 'Dancing Script', cursive;
+            margin-left: 0px;
+            line-height: 50px;
+            padding-right: 6px;
+            margin-top: 4px;
+            color: #b24a00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 80px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #2c1810;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .signature::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #8b4513);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 50px;
+            color: #8b7355;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .ink-blot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 50%;
+            animation: fadeInBlot 2s ease forwards;
+        }
+        
+        .ink-blot:nth-child(1) { top: 200px; right: 100px; animation-delay: 3s; }
+        .ink-blot:nth-child(2) { bottom: 150px; left: 120px; animation-delay: 4s; }
+        
+        @keyframes fadeInBlot {
+            from { opacity: 0; transform: scale(0); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .date {
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            font-size: 16px;
+            color: #6b5b4f;
+            font-style: italic;
+            transform: rotate(2deg);
+        }
+        
+        @media (max-width: 768px) {
+            .envelope {
+                margin: 20px;
+                max-width: none;
+            }
+            
+            .letter-container {
+                margin: 20px;
+                padding: 40px 30px;
+                max-width: none;
+            }
+            
+            .letter {
+                font-size: 16px;
+                line-height: 2;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="player" loop>
+        <source src="./music.mp3" type="audio/mpeg">
+    </audio>
+    <div class="wooden-desk"></div>
+    
+    <div class="envelope" onclick="openLetter()">
+        <h1>Click to Open</h1>
+        <p>A Letter for you my love</p>
+    </div>
+    
+    <div class="letter-container" id="letter">
+        <div class="date">March 10, 2026</div>
+        <div class="ink-blot"></div>
+        <div class="ink-blot"></div>
+        
+        <h1>To Miss Kristine Abella</h1>
+        
+        <div class="letter" id="letterText">
+            <p><span class="word">My</span> <span class="word">baby</span> <span class="word">Abeee,</span></p>
+
+            <p><span class="word">Another</span> <span class="word">month</span> <span class="word">has</span> <span class="word">passed,</span> <span class="word">and</span> <span class="word">we're</span> <span class="word">still</span> <span class="word">in</span><span class="word">love</span> <span class="word">my</span> <span class="word">baby abee</span> <span class="word">no</span> <span class="word">matter</span> <span class="word">what</span> <span class="word">happen,</span> <span class="word">we</span> <span class="word">still</span> <span class="word">choose</span> <span class="word">each</span> <span class="word">other.</span><span class="word">Thank you</span> <span class="word">for</span> <span class="word">everything</span> <span class="word">love</span> <span class="word">highly</span> <span class="word">appreciated</span><span class="word">:))</span> <span class="word">Time</span> <span class="word">moves</span> <span class="word">so</span> <span class="word">quickly</span> <span class="word">and</span> <span class="word">yet</span> <span class="word">every</span> <span class="word">moment</span> <span class="word">feels</span> <span class="word">worth</span> <span class="word">holding</span> <span class="word">onto</span> <span class="word">forever.</span></p>
+
+<p><span class="word">It</span> <span class="word">still</span> <span class="word">amazes</span> <span class="word">me</span> <span class="word">na</span> <span class="word">how</span> <span class="word">someone</span> <span class="word">like</span> <span class="word">you</span> <span class="word">became</span> <span class="word">part</span> <span class="word">of</span> <span class="word">my</span> <span class="word">life,</span> <span class="word">Sa</span> <span class="word">kadaghan</span> <span class="word">na</span> <span class="word">adlaw</span> <span class="word">nga</span> <span class="word">nilabay,</span> <span class="word">ikaw</span> <span class="word">gihapon</span><span class="word">akong</span> <span class="word">pinaka</span> <span class="word">paborito</span> <span class="word">nakong</span> <span class="word">pahinga,</span> <span class="word">paborito</span> <span class="word">nakong</span> <span class="word">ka chika,</span> <span class="word">at</span> <span class="word">the</span> <span class="word">end</span> <span class="word">of</span> <span class="word">the</span> <span class="word">day.</span> <span class="word">You</span> <span class="word">have</span> <span class="word">this</span> <span class="word">way</span> <span class="word">of</span> <span class="word">making</span> <span class="word">everything</span> <span class="word">feel</span> <span class="word">softer,</span> <span class="word">lighter,</span> <span class="word">like</span> <span class="word">every</span><span class="word">time</span> <span class="word">na</span> <span class="word">ka storya</span> <span class="word">tika</span> <span class="word">being</span> <span class="word">sweet</span> <span class="word">to</span> <span class="word">each</span> <span class="word">other,</span> <span class="word">labaw</span> <span class="word">nag</span> <span class="word">mag</span> <span class="word">kuyog ta</span> <span class="word">maka</span> <span class="word">walag</span> <span class="word">problema</span> <span class="word">ug stressed</span> <span class="word">olala</span><span class="word">kalami.</span></p>
+
+<p><span class="word">Being</span> <span class="word">with</span> <span class="word">you</span> <span class="word">feels</span> <span class="word">like</span> <span class="word">finding</span> <span class="word">something</span> <span class="word">I</span> <span class="word">never</span> <span class="word">knew</span> <span class="word">I</span> <span class="word">needed.</span> <span class="word">Sa imo</span> <span class="word">rako</span> <span class="word">naka feel</span> <span class="word">ug ningana</span> <span class="word">ang</span> <span class="word">comfort,</span> <span class="word">happiness</span> <span class="word">na</span> <span class="word">wala</span> <span class="word">nako</span> <span class="word">alam</span> <span class="word">na</span> <span class="word">feel</span> <span class="word">dati</span> <span class="word">.</span> <span class="word">Idk,</span> <span class="word">I</span> <span class="word">just</span> <span class="word">feel</span> <span class="word">warm</span> <span class="word">and</span> <span class="word">safe</span> <span class="word">when</span> <span class="word">I</span><span class="word">'m</span> <span class="word">with</span> <span class="word">you.</span> <span class="word">I</span> <span class="word">keep</span> <span class="word">realizing</span> <span class="word">na</span> <span class="word">mas</span> <span class="word">lalo</span> <span class="word">pa</span> <span class="word">tikang</span> <span class="word">gimahal</span> <span class="word">in</span> <span class="word">ways</span> <span class="word">I</span> <span class="word">can’t</span> <span class="word">always</span> <span class="word">explain</span> <span class="word">perfectly.</span></p>
+
+<p><span class="word">Thank</span> <span class="word">you</span> <span class="word">for</span> <span class="word">staying</span> <span class="word">even</span> <span class="word">though</span> <span class="word">daghan</span> <span class="word">tag</span> <span class="word">misunderstanding</span> <span class="word">and</span> <span class="word">everything</span> <span class="word">nga</span> <span class="word">mga</span><span class="word">problema,</span> <span class="word">pero</span> <span class="word">we</span> <span class="word">still</span> <span class="word">find</span> <span class="word">ways</span> <span class="word">para</span> <span class="word">maayos</span> <span class="word">ang</span> <span class="word">tanan,</span> <span class="word">and</span> <span class="word">thank</span> <span class="word">you</span> <span class="word">for</span> <span class="word">giving</span> <span class="word">me</span> <span class="word">moments</span> <span class="word">that</span> <span class="word">I</span> <span class="word">know</span> <span class="word">I’ll</span> <span class="word">always</span> <span class="word">treasure.</span> <span class="word">Every</span> <span class="word">little</span> <span class="word">thing</span> <span class="word">about</span> <span class="word">you</span> <span class="word">means</span> <span class="word">so</span> <span class="word">much</span> <span class="word">more</span> <span class="word">to</span> <span class="word">me</span> <span class="word">than</span> <span class="word">words</span> <span class="word">can</span> <span class="word">say.</span> <span class="word">I</span> <span class="word">love</span> <span class="word">you</span> <span class="word">so</span> <span class="word">much,</span> <span class="word">my</span> <span class="word">love.</span></p>
+
+<p><span class="word">Happy 41th</span> <span class="word">monthsary,</span> <span class="word">baby abeee</span> <span class="word">nako.</span> <span class="word">I</span> <span class="word">just</span> <span class="word">want</span> <span class="word">you</span> <span class="word">to</span> <span class="word">know</span> <span class="word">na</span> <span class="word">how</span> <span class="word">grateful</span> <span class="word">I</span> <span class="word">am</span> <span class="word">for</span> <span class="word">you,</span> <span class="word">to</span> <span class="word">have</span> <span class="word">you.</span> <span class="word">I</span> <span class="word">may</span> <span class="word">not</span> <span class="word">always</span> <span class="word">find</span> <span class="word">the</span> <span class="word">perfect</span> <span class="word">words,</span> <span class="word">pero</span> <span class="word">please</span> <span class="word">know</span> <span class="word">that</span> <span class="word">what</span> <span class="word">I</span> <span class="word">feel</span> <span class="word">for</span> <span class="word">you</span> <span class="word">is</span> <span class="word">real</span> <span class="word">and</span> <span class="word">sincere,</span> <span class="word">love.</span> <span class="word">Ikaw</span> <span class="word">ang</span> <span class="word">isa</span> <span class="word">sa</span> <span class="word">pinakamagandang</span> <span class="word">nangyari</span> <span class="word">sa</span> <span class="word">buhay</span> <span class="word">ko,</span> <span class="word">and</span> <span class="word">if</span> <span class="word">I</span> <span class="word">had</span> <span class="word">to</span> <span class="word">choose</span> <span class="word">again,</span> <span class="word">I</span> <span class="word">would</span> <span class="word">still</span> <span class="word">choose</span> <span class="word">you,</span> <span class="word">over</span> <span class="word">and</span> <span class="word">over.</span></p>
+
+<p><span class="word">And</span> <span class="word">this</span> <span class="word">time,</span> <span class="word">I</span> <span class="word">want</span> <span class="word">to</span> <span class="word">make</span> <span class="word">this</span> <span class="word">even</span> <span class="word">more</span> <span class="word">special.</span> <span class="word">I</span> <span class="word">dedicate</span> <span class="word">this</span> <span class="word">song</span> <span class="word">to</span> <span class="word">you,</span> <span class="word">the</span> <span class="word">one</span> <span class="word">playing</span> <span class="word">sa</span> <span class="word">background</span> <span class="word">of</span> <span class="word">the</span> <span class="word">website</span> <span class="word">I</span> <span class="word">made.</span> <span class="word">Thank</span><span class="word">you</span> <span class="word">so</span> <span class="word">much love</span> <span class="word">I</span> <span class="word">MISS</span> <span class="word">YOUU</span> <span class="word">muchh</span> <span class="word">muchh</span> <span class="word">lablabb</span> <span class="word">babyy</span> <span class="word">abee</span> <span class="word">nakoo</span> <span class="word">mwaaaaaaaaaa</span> <span class="word">I</span> <span class="word">lovee</span> <span class="word">youuu</span> <span class="word">moreee</span> <span class="word">alwaysss</span><span class="word">babyy</span> <span class="word">abeee</span> <span class="word">nakooo</span><span class="word">:))</span></p>
+        </div>
+        
+        <div class="signature">
+            Happy Monthsary again, baby abee nakin.<br>
+            Your:babyykinit
+        </div>
+        
+        <div class="footer">
+           Lablabb kaayo tika pirmi po♡
+        </div>
+    </div>
+
+
+    <section class="memory-gallery" id="memoryGallery" aria-label="Our memories together">
+        <div class="memory-gallery__inner">
+            <div class="memory-divider" aria-hidden="true">
+                <span></span>
+                <i>♡</i>
+                <span></span>
+            </div>
+
+            <div class="memory-stage-wrapper">
+                <div class="memory-stage">
+                    <figure class="memory-card memory-card--one" data-memory-card>
+                        <img src="./image1.jpg" alt="Memory photo 1" class="memory-photo">
+                    </figure>
+
+                    <figure class="memory-card memory-card--two" data-memory-card>
+                        <img src="./image2.jpg" alt="Memory photo 2" class="memory-photo">
+                    </figure>
+
+                    <figure class="memory-card memory-card--three" data-memory-card>
+                        <img src="./image3.jpg" alt="Memory photo 3" class="memory-photo">
+                    </figure>
+                </div>
+
+                <div class="memory-triggers" aria-hidden="true">
+                    <div class="memory-trigger" data-memory-trigger="1"></div>
+                    <div class="memory-trigger" data-memory-trigger="2"></div>
+                    <div class="memory-trigger" data-memory-trigger="3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        function openLetter() {
+            document.querySelector('.envelope').style.display = 'none';
+            document.getElementById('letter').style.display = 'block';
+
+            // Start audio after user click
+            const audio = document.getElementById("player");
+            audio.volume = 0;
+            audio.play();
+
+            let targetVolume = 0.5;
+            let fadeSpeed = 200;
+            let volumeStep = 0.01;
+            let fadeIn = setInterval(() => {
+              if (audio.volume < targetVolume) {
+                audio.volume = Math.min(audio.volume + volumeStep, targetVolume);
+              } else {
+                clearInterval(fadeIn);
+              }
+            }, fadeSpeed);
+        
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(135deg, #f4f1ea 0%, #faf8f3 50%, #fff 100%)';
+            }, 600);
+        
+            setTimeout(() => {
+                const words = document.querySelectorAll('.word');
+                words.forEach((word, index) => {
+                    word.style.opacity = '0';
+                    setTimeout(() => {
+                        word.style.opacity = '1';
+                        word.style.animation = 'handwrite 0.3s ease-in-out';
+                    }, index * 50);
+                });
+        }, 1000);
+}
+</script>
+
+
+
+    <style>
+        .memory-gallery {
+            display: none;
+            position: relative;
+            width: 100%;
+            margin: 90px 0 180px;
+            padding: 16px 0 42px;
+            z-index: 1;
+        }
+
+        .memory-gallery__inner {
+            position: relative;
+            width: min(100%, 1180px);
+            margin: 0 auto;
+        }
+
+        .memory-gallery::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.34), transparent 30%),
+                radial-gradient(circle at 78% 34%, rgba(219, 200, 171, 0.22), transparent 32%),
+                radial-gradient(circle at 50% 82%, rgba(255, 246, 233, 0.24), transparent 30%);
+            pointer-events: none;
+        }
+
+        .memory-divider {
+            width: min(90vw, 680px);
+            margin: 0 auto 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: rgba(139, 115, 85, 0.85);
+        }
+
+        .memory-divider span {
+            flex: 1;
+            max-width: 220px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(139, 115, 85, 0.5), transparent);
+        }
+
+        .memory-divider i {
+            font-style: normal;
+            font-size: 20px;
+            line-height: 1;
+            opacity: 0.82;
+            transform: translateY(-1px);
+        }
+
+        .memory-stage-wrapper {
+            position: relative;
+            min-height: 285vh;
+        }
+
+        .memory-stage {
+            position: sticky;
+            top: 10vh;
+            width: min(92vw, 1080px);
+            height: min(76vh, 720px);
+            margin: 0 auto;
+        }
+
+        .memory-stage::before {
+            content: '';
+            position: absolute;
+            inset: 10% 8%;
+            border-radius: 42px;
+            background:
+                radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.58), transparent 30%),
+                radial-gradient(circle at 68% 42%, rgba(246, 229, 205, 0.38), transparent 34%),
+                linear-gradient(145deg, rgba(255, 251, 246, 0.32), rgba(240, 225, 204, 0.18));
+            filter: blur(12px);
+            pointer-events: none;
+        }
+
+        .memory-stage::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 8%;
+            width: min(70vw, 620px);
+            height: 88px;
+            transform: translateX(-50%);
+            background: radial-gradient(ellipse at center, rgba(72, 42, 26, 0.16), transparent 72%);
+            filter: blur(14px);
+            pointer-events: none;
+        }
+
+        .memory-triggers {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            pointer-events: none;
+        }
+
+        .memory-trigger {
+            min-height: 95vh;
+        }
+
+        .memory-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 0;
+            padding: 14px 14px 18px;
+            border-radius: 28px;
+            background: linear-gradient(155deg, rgba(255, 255, 255, 0.98), rgba(246, 236, 222, 0.93));
+            border: 1px solid rgba(139, 115, 85, 0.18);
+            box-shadow:
+                0 20px 52px rgba(44, 24, 16, 0.16),
+                0 8px 20px rgba(44, 24, 16, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.72);
+            overflow: hidden;
+            opacity: 0;
+            filter: blur(14px);
+            will-change: transform, opacity, filter;
+            transform-origin: center center;
+            transform: translate(calc(-50% + var(--from-x)), calc(-50% + var(--from-y))) rotate(var(--from-rotate)) scale(0.9);
+            transition:
+                opacity 1.45s cubic-bezier(0.19, 1, 0.22, 1),
+                transform 1.45s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 1.45s cubic-bezier(0.19, 1, 0.22, 1),
+                box-shadow 0.7s ease;
+        }
+
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 115, 85, 0.12);
+            pointer-events: none;
+        }
+
+        .memory-card.is-visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translate(calc(-50% + var(--to-x)), calc(-50% + var(--to-y))) rotate(var(--to-rotate)) scale(1);
+            box-shadow:
+                0 28px 68px rgba(44, 24, 16, 0.18),
+                0 12px 26px rgba(44, 24, 16, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.78);
+        }
+
+        .memory-card--one {
+            width: min(38vw, 390px);
+            z-index: 1;
+            --from-x: -310px;
+            --from-y: 150px;
+            --from-rotate: -26deg;
+            --to-x: -250px;
+            --to-y: 34px;
+            --to-rotate: -18deg;
+        }
+
+        .memory-card--two {
+            width: min(29vw, 310px);
+            z-index: 2;
+            --from-x: -46px;
+            --from-y: 165px;
+            --from-rotate: -8deg;
+            --to-x: -44px;
+            --to-y: -46px;
+            --to-rotate: -3deg;
+        }
+
+        .memory-card--three {
+            width: min(31vw, 340px);
+            z-index: 3;
+            --from-x: 255px;
+            --from-y: 170px;
+            --from-rotate: 20deg;
+            --to-x: 200px;
+            --to-y: 24px;
+            --to-rotate: 13deg;
+        }
+
+        .memory-photo {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 14px 32px rgba(44, 24, 16, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .memory-stage {
+                width: min(94vw, 900px);
+            }
+
+            .memory-card--one {
+                width: min(42vw, 340px);
+                --to-x: -180px;
+                --from-x: -225px;
+            }
+
+            .memory-card--two {
+                width: min(32vw, 270px);
+                --to-x: -28px;
+                --to-y: -34px;
+            }
+
+            .memory-card--three {
+                width: min(34vw, 290px);
+                --to-x: 145px;
+                --from-x: 190px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .memory-gallery {
+                margin: 56px 0 116px;
+                padding-top: 10px;
+            }
+
+            .memory-divider {
+                width: min(92vw, 420px);
+                gap: 12px;
+                margin-bottom: 14px;
+            }
+
+            .memory-stage-wrapper {
+                min-height: 250vh;
+            }
+
+            .memory-stage {
+                top: 9vh;
+                height: 70vh;
+                width: min(94vw, 520px);
+            }
+
+            .memory-stage::after {
+                width: min(78vw, 360px);
+                bottom: 10%;
+            }
+
+            .memory-card {
+                padding: 10px 10px 14px;
+                border-radius: 22px;
+            }
+
+            .memory-card::before {
+                inset: 8px;
+                border-radius: 16px;
+            }
+
+            .memory-card--one {
+                width: min(70vw, 290px);
+                --from-x: -170px;
+                --from-y: 110px;
+                --from-rotate: -23deg;
+                --to-x: -88px;
+                --to-y: 18px;
+                --to-rotate: -16deg;
+            }
+
+            .memory-card--two {
+                width: min(55vw, 220px);
+                --from-x: -28px;
+                --from-y: 120px;
+                --from-rotate: -7deg;
+                --to-x: -10px;
+                --to-y: -38px;
+                --to-rotate: -2deg;
+            }
+
+            .memory-card--three {
+                width: min(58vw, 232px);
+                --from-x: 145px;
+                --from-y: 120px;
+                --from-rotate: 16deg;
+                --to-x: 80px;
+                --to-y: 20px;
+                --to-rotate: 11deg;
+            }
+
+            .memory-photo {
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .memory-stage {
+                height: 68vh;
+            }
+
+            .memory-card--one {
+                width: min(74vw, 270px);
+                --to-x: -72px;
+            }
+
+            .memory-card--two {
+                width: min(56vw, 205px);
+                --to-x: -8px;
+                --to-y: -28px;
+            }
+
+            .memory-card--three {
+                width: min(60vw, 214px);
+                --to-x: 68px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .memory-stage-wrapper {
+                min-height: auto;
+            }
+
+            .memory-stage {
+                position: relative;
+                top: 0;
+                height: auto;
+                min-height: 480px;
+            }
+
+            .memory-card {
+                transition: none;
+                opacity: 1;
+                filter: none;
+                transform: translate(calc(-50% + var(--to-x)), calc(-50% + var(--to-y))) rotate(var(--to-rotate)) scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        (function () {
+            let memoryGalleryInitialized = false;
+
+            function initMemoryGallery() {
+                if (memoryGalleryInitialized) return;
+
+                const gallery = document.getElementById('memoryGallery');
+                if (!gallery) return;
+
+                const cards = Array.from(gallery.querySelectorAll('[data-memory-card]'));
+                const triggers = gallery.querySelectorAll('[data-memory-trigger]');
+                if (!cards.length || !triggers.length) return;
+
+                const revealCard = (index) => {
+                    const card = cards[index - 1];
+                    if (!card || card.classList.contains('is-visible')) return;
+
+                    window.setTimeout(() => {
+                        card.classList.add('is-visible');
+                    }, index * 120);
+                };
+
+                const observer = new IntersectionObserver((entries, observerInstance) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+                        const index = Number(entry.target.getAttribute('data-memory-trigger'));
+                        if (!Number.isNaN(index)) {
+                            revealCard(index);
+                        }
+                        observerInstance.unobserve(entry.target);
+                    });
+                }, {
+                    threshold: 0.6,
+                    rootMargin: '0px 0px -12% 0px'
+                });
+
+                triggers.forEach((trigger) => observer.observe(trigger));
+                memoryGalleryInitialized = true;
+            }
+
+            const originalOpenLetter = window.openLetter;
+            window.openLetter = function () {
+                if (typeof originalOpenLetter === 'function') {
+                    originalOpenLetter.apply(this, arguments);
+                }
+
+                const gallery = document.getElementById('memoryGallery');
+                if (gallery) {
+                    gallery.style.display = 'block';
+                }
+
+                initMemoryGallery();
+            };
+        })();
+    </script>
+
+
+</body>
+</html>
